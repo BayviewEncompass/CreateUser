@@ -1,0 +1,248 @@
+{
+
+	"PersonaPull": [
+		{
+
+			"PersName": "Account Executive",
+			"OrgFolder": "Account Executives",
+			"Group": [ "*New Users" ],
+			"Access": "null",
+			"PersonaName": [ "TPO AE Sales Rep" ]
+		},
+
+		{
+			"PersName": "Closer (Vendor/Third Party)",
+			"OrgFolder": "ServiceLink (Contract Closing)",
+			"Group": [ "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Closer (Vendor)" ]
+		},
+		{
+			"PersName": "Training & Instructional Design",
+			"OrgFolder": "All Channel - Access",
+			"Group": [ "Govt Insuring", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Client Manager", "Client Management", "Client Services", "Closer", "COVID Processor/CM", "Loan Officer", "Loan Processor", "Post Closing/Insuring", "QA", "Redisclosure Specialist", "Sales QA", "Setup", "TPOPersona", "Underwriter" ]
+		},
+		{
+
+			"PersName": "Credit Policy",
+			"OrgFolder": "Operations (Fulfillment)",
+			"Group": [ "Underwriters", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Client Services", "Underwriter" ]
+		},
+		{
+
+			"PersName": "Loan Processor",
+			"OrgFolder": "Processing Teams",
+			"Group": [ "Processors", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Loan Processor", "COVID Processor/CM" ]
+		},
+		{
+
+			"PersName": "Loan Officer",
+			"OrgFolder": "CD Operations",
+			"Group": [ "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Loan Officer" ]
+		},
+		{
+
+			"PersName": "Closing Manager",
+			"OrgFolder": "CD Operations",
+			"Group": [ "Closing Managers", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Closer", "Closing Manager", "COVID Closer" ]
+		},
+		{
+
+			"PersName": "Closer- Assumption",
+			"OrgFolder": "Assumptions",
+			"Group": [ "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Assumption Closer" ]
+		},
+		{
+
+			"PersName": "Closer- Wholesale",
+			"OrgFolder": "TPO Administration & Operations",
+			"Group": [ "Closers", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Closer", "COVID Closer" ]
+		},
+		{
+
+			"PersName": "Client Management",
+			"OrgFolder": "TPO Administration & Operations",
+			"Group": [ "TPO Admins", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Administrator", "Client Management" ]
+		},
+		{
+
+			"PersName": "Quality Assurance",
+			"OrgFolder": "All Channel - Access",
+			"Group": [ "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "QA" ]
+		},
+		{
+
+			"PersName": "Client Manager",
+			"OrgFolder": "TPO Administration & Operations",
+			"Group": [ "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Client Manager", "COVID Processor/CM" ]
+		},
+		{
+
+			"PersName": "Post Closing/Insuring",
+			"OrgFolder": "Operations (Fulfillment)",
+			"Group": [ "All eDisclosures", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Post Closing/Insuring" ]
+		},
+		{
+
+			"PersName": "Loan Processing Manager",
+			"OrgFolder": "CD Operations",
+			"Group": [ "Managers", "Processors", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "COVID Processor/CM", "Dashboard", "Loan Opener", "Loan Processor", "Manager", "Processing Disclose", "Processing Manager" ]
+		},
+		{
+
+			"PersName": "Funder",
+			"OrgFolder": "Operations (Fulfillment)",
+			"Group": [ "Closing Managers", "All eDisclosures", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Closer", "Closing Manager" ]
+		},
+		{
+
+			"PersName": "Assumption Processor",
+			"OrgFolder": "Assumptions",
+			"Group": [ "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Assumption Processor" ]
+		},
+		{
+
+			"PersName": "Sales Assistant",
+			"OrgFolder": "CD Operations",
+			"Group": [ "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Sales QA" ]
+		},
+		{
+
+			"PersName": "Capital Markets",
+			"OrgFolder": "Operations (Fulfillment)",
+			"Group": [ "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Cap Markets" ]
+		},
+		{
+
+			"PersName": "Redisclosure Specialist",
+			"OrgFolder": "Operations (Fulfillment)",
+			"Group": [ "All eDisclosures", "Processors", "Redisclosure Desk", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Redisclosure Specialist" ]
+		},
+		{
+
+			"PersName": "Secondary",
+			"OrgFolder": "Operations (Fulfillment)",
+			"Group": [ "Secondary", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Secondary" ]
+		},
+		{
+
+			"PersName": "Client Services",
+			"OrgFolder": "TPO Administration & Operations",
+			"Group": [ "Client Services", "Processors", "TPO Admins", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Administrator", "Client Management", "Client Services" ]
+		},
+		{
+
+			"PersName": "Wire Request Approval",
+			"OrgFolder": "Operations (Fulfillment)",
+			"Group": [ "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Wire Request Approval", "Batch Import" ]
+		},
+		{
+
+			"PersName": "Treasury",
+			"OrgFolder": "Operations (Fulfillment)",
+			"Group": [ "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Batch Import", "Wire Request Approval" ]
+		},
+		{
+
+			"PersName": "Underwriter",
+			"OrgFolder": "Underwriting Teams",
+			"Group": [ "All eDisclosures", "Underwriters", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Underwriter" ]
+		},
+		{
+
+			"PersName": "Sales Manager",
+			"OrgFolder": "CD Operations",
+			"Group": [ "Sales Managers", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Sales Manager", "Loan Officer", "Manager" ]
+		},
+		{
+
+			"PersName": "Closer",
+			"OrgFolder": "Closing Teams",
+			"Group": [ "Closers", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Closer", "COVID Closer" ]
+		},
+		{
+
+			"PersName": "Disclosure Associate",
+			"OrgFolder": "TPO Administration & Operations",
+			"Group": [ "All eDisclosures", "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Client Manager", "Setup" ]
+		},
+		{
+
+			"PersName": "Government Insuring",
+			"OrgFolder": "All Channel - Access",
+			"Group": [ "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Govt Insuring" ]
+		},
+		{
+
+			"PersName": "Compliance",
+			"OrgFolder": "All Channel - Access",
+			"Group": [ "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Compliance" ]
+
+		},
+		{
+
+			"PersName": "Loan Officer Assistant",
+			"OrgFolder": "CD Operations",
+			"Group": [ "*New Users" ],
+			"Access": "Full",
+			"PersonaName": [ "Loan Officer", "Loan Officer Assistant" ]
+
+		}
+
+
+	]
+}

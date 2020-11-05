@@ -1,0 +1,19 @@
+{
+
+"ExecPers": "TPO AE Sales Rep",
+"OrgFolder": "Account Executives",
+	"ExecGroup": [
+		"TPO Wholesale Manager - Cullen",
+		"TPO Wholesale Manager - Glass",
+		"TPO Wholesale Manager - Murphy"
+	],
+	"AcctAccess": [
+		"Full",
+		"None",
+		"ReadOnly",
+		"ReadWrite"
+	]
+
+	
+
+}

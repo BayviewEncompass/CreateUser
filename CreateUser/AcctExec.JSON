@@ -1,0 +1,18 @@
+[
+
+	{
+
+		"PersName": "Account Executive",
+		"OrgFolder": "Account Executives",
+		"Group": "TPO Wholesale Manager - ",
+		"Access": null
+	},
+
+	{
+		"PersName": "Closer (Vendor/Third Party)",
+		"OrgFolder": "Service Link (Contract Closing)",
+		"Group": null,
+		"Access": "Full"
+	}
+
+]
