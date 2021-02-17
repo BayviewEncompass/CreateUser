@@ -37,12 +37,20 @@
     <Reference Include="ClientSession">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Encompass\ClientSession.dll</HintPath>
     </Reference>
+    <Reference Include="Elli.AdvCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d11ef57bba4acf91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Encompass\Elli.AdvCode.dll</HintPath>
+    </Reference>
     <Reference Include="EllieMae.Encompass.AsmResolver, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d11ef57bba4acf91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\SmartClientCache\Apps\Ellie Mae\Encompass\EllieMae.Encompass.AsmResolver.dll</HintPath>
     </Reference>
     <Reference Include="EllieMae.Encompass.Runtime">
       <HintPath>..\..\..\..\..\..\SmartClientCache\Apps\Ellie Mae\Encompass\EllieMae.Encompass.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EMBAM15, Version=1.5.1.0, Culture=neutral, PublicKeyToken=d11ef57bba4acf91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\SmartClientCache\Apps\UAC\Ellie Mae\1ZWX9OSIET83w+yYNgRiRfTDNe8=\Encompass360\EMBAM15.dll</HintPath>
     </Reference>
     <Reference Include="EMCommon">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Encompass\EMCommon.dll</HintPath>
@@ -52,6 +60,9 @@
     </Reference>
     <Reference Include="EncompassObjects">
       <HintPath>..\..\..\..\..\..\SmartClientCache\Apps\Ellie Mae\Encompass\SDK\EncompassObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="MainUI">
+      <HintPath>..\..\..\..\..\..\SmartClientCache\Apps\UAC\Ellie Mae\1ZWX9OSIET83w+yYNgRiRfTDNe8=\Encompass360\MainUI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -70,6 +81,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIElements">
+      <HintPath>..\..\..\..\..\..\SmartClientCache\Apps\UAC\Ellie Mae\xIHR5EqGa7zPnRG0YpD5z4TPAB0=\Encompass360\UIElements.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="createUser.cs" />

@@ -17,7 +17,8 @@ using Newtonsoft.Json;
 using Excel = Microsoft.Office.Interop.Excel;
 using EllieMae.EMLite.ClientServer;
 using EllieMae.EMLite.RemotingServices;
-
+using EllieMae.EMLite.WebServices;
+using EllieMae.EMLite.Common;
 
 namespace UserCreate
 {
@@ -27,11 +28,13 @@ namespace UserCreate
         private static string acctExec = "PersonaPullJSON.json";
         private static PersonaDB file;
         private static string PersName = null;
+        private static string PersAddName = null;
         private static string OrgFolder = null;
         public static string Group = null;
         public static string Access = null;
         public static string PersonaName = null;
         public static PersonaDB CDO => file ?? DownloadCDO();
+        public static EllieMae.Encompass.Configuration.EncompassSettings SetIt;
 
         public CreateUser()
         {
@@ -59,7 +62,14 @@ namespace UserCreate
 
         private void CurrentLoan_FieldChange(object source, EllieMae.Encompass.BusinessObjects.Loans.FieldChangeEventArgs e)
         {
+            //string oFieldVal = EncompassApplication.CurrentLoan.Fields["CX.CREATEUSER.TEST"].Value.ToString();
+            //string oSet = "GSE Services";
+            //var oSettings =  EllieMae.EMLite.Common.ServicesMapping.GetServiceSetting(oSet);
+            //int show;
+           
 
+            
+            
             if (e.FieldID == "CX.ADMIN.CREATE.USER")
             {
                 DownloadCDO();
@@ -68,6 +78,23 @@ namespace UserCreate
                 MessageBox.Show("All Users have been created Successfully");
                 
             }
+            //if (e.FieldID == "CX.CREATEUSER.ADDPERSONA")
+            //{
+                //DownloadCDO();
+                //AssignPersona();
+
+                //MessageBox.Show("Additions Complete");
+            //}
+            //if (e.FieldID == "CX.CREATEUSER.TEST")
+            //{
+
+                //var oDirectory = SetIt.EncompassProgramDirectory;
+                //show = oDirectory[0];
+                //MessageBox.Show(show.ToString());
+
+           // }           
+
+
         }
 
         private void matchThePersona()
@@ -89,6 +116,7 @@ namespace UserCreate
             string eMail;
             string taskNo;
             string mgrID;
+            string procTitle;
             string pWord = "P@ssword1";
 
             for (rCnt = 2; rCnt <= rowCount; rCnt++)
@@ -106,6 +134,8 @@ namespace UserCreate
                 taskNo = (string)(userWorksheet.Cells[rCnt, cCnt].Value2);
                 cCnt++;
                 mgrID = (string)(userWorksheet.Cells[rCnt, cCnt].Value2);
+                cCnt++;
+                procTitle = (string)(userWorksheet.Cells[rCnt, cCnt].Value2);
                 cCnt = 1;
 
                 if (userID.Length >= 17)
@@ -163,14 +193,31 @@ namespace UserCreate
                         {
                             if (mgrID != "DavidJobes" ^ mgrID != "MichaelTrainor")
                             {
-                                if (mgrID == procOrg.Description)
+
+                                if (mgrID.ToLower() == procOrg.Description)
                                 {
                                     OrgFolder = procOrg.ToString();
                                 }
                             }
                             if (mgrID == "MichaelTrainor" && OrgFolder == "Processing Teams") 
                             {
-                                OrgFolder = "Digital Risk Processors";
+                                if (procTitle == "Digital Risk")
+                                {
+                                    OrgFolder = "Digital Risk Processors";
+                                }
+                                else if (procTitle == "Maxwell") 
+                                {
+                                    OrgFolder = "Maxwell Processors";
+                                }
+                                else if (procTitle == "Accenture")
+                                {
+                                    OrgFolder = "Accenture Processors";
+                                }
+                                else
+                                {
+                                    OrgFolder = "Digital Risk Processors";
+                                }
+
                             }
                             else if (mgrID == "DavidJobes" && OrgFolder == "Processing Teams")
                             {
@@ -180,7 +227,9 @@ namespace UserCreate
                             {
                                 OrgFolder = "Sourcepoint Closers";
                             }
+
                         }
+
                     }
                 }
 
@@ -207,7 +256,10 @@ namespace UserCreate
                         newUser.SubordinateLoanAccessRight = readOnly;
                         newUser.PeerLoanAccessRight = readNo;
                     }
-                    
+                    CCSiteInfo ccSite = new CCSiteInfo();
+                    ccSite.UseParentInfo = false;
+                    ccSite.UseParentInfo = true;
+                    //newUser.Refresh();
                     newUser.Commit();
                     listPers.Clear();
                     
@@ -265,7 +317,7 @@ namespace UserCreate
                     userInfo.RequirePasswordChange = true;
                     userInfo.PersonaAccessComments = "Created via " + taskNo + " on " + DateTime.Now;
                     orgMgr.UpdateUser(userInfo);
-                   
+
                 }
             stop:
                 stopGO = "1";
@@ -278,5 +330,58 @@ namespace UserCreate
             Marshal.ReleaseComObject(userApp);
             
         }
+
+        private void AssignPersona()
+        {
+            Excel.Application userApp = new Excel.Application();
+            Excel.Workbook userWorkbook = userApp.Workbooks.Open(@"C:\Users\christopherclemency\Documents\PersonaAssign.xlsx");
+            Excel._Worksheet userWorksheet = userWorkbook.Sheets[1];
+            Excel.Range userRange = userWorksheet.UsedRange;
+            int rCnt = 1;
+            int cCnt = 1;
+            int rowCount = userRange.Rows.Count;
+            int colCount = userRange.Columns.Count;
+            string userID;
+           
+            
+
+            
+
+            for (rCnt = 2; rCnt <= rowCount; rCnt++)
+            {
+                PersAddName = (string)(userWorksheet.Cells[rCnt, cCnt].Value2);
+                cCnt++;
+                userID = (string)(userWorksheet.Cells[rCnt, cCnt].Value2);
+                cCnt = 1;
+                OrganizationList orgs = EncompassApplication.Session.Organizations.GetAllOrganizations();
+                foreach (Organization org in orgs)
+                {
+                    UserList orgUsers = org.GetUsers();
+                    foreach (User useID in orgUsers)
+                    {
+
+                        if (useID.ID.ToString() == userID.ToLower())
+
+                        {
+                                                        
+                            useID.Personas.Add(EncompassApplication.Session.Users.Personas.GetPersonaByName(PersAddName));
+                            useID.Commit();
+                                
+                        }
+                        else if (PersAddName == "")
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            
+            userWorkbook.Close(true, null, null);
+            userApp.Quit();
+            Marshal.ReleaseComObject(userWorksheet);
+            Marshal.ReleaseComObject(userWorkbook);
+            Marshal.ReleaseComObject(userApp);
+        }
+
     }
 }
